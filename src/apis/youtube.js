@@ -1,4 +1,4 @@
-﻿import axios from 'axios';
+import axios from 'axios';
 
 const KEY = 'INSERT YOUTUBE API KEY HERE';
 
