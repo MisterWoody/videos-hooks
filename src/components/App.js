@@ -23,15 +23,17 @@ const App = () => {
         setSelectedVideo(response.data.items[0]);
         
     };
+
+    const onVideoSelect = (video) => {
+        setSelectedVideo(video);
+    };
 };
 
 class App extends React.Component {
     
     
     
-    onVideoSelect = (video) => {
-        this.setState({selectedVideo: video });
-    };
+    
     
     render() {
         return (
