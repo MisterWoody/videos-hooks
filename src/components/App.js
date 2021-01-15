@@ -11,22 +11,23 @@ const App = () => {
     useEffect(() => {
         onTermSubmit('cutest puppy');
     }, []);
-};
 
-class App extends React.Component {
-    
-    onTermSubmit = async (term) => {
+    const onTermSubmit = async (term) => {
         const response = await youtube.get('/search', {
             params: {
                 q: term
             }
         });
+
+        setVideos(response.data.items);
+        setSelectedVideo(response.data.items[0]);
         
-        this.setState( { 
-            videos: response.data.items,
-            selectedVideo : response.data.items[0]
-        });
     };
+};
+
+class App extends React.Component {
+    
+    
     
     onVideoSelect = (video) => {
         this.setState({selectedVideo: video });
