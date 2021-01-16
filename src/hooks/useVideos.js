@@ -17,6 +17,7 @@ const useVideos = (defaultSearchTerm) => {
 
         setVideos(response.data.items);
     };
+    return { videos, onTermSubmit };
 };
 
 export default useVideos;
