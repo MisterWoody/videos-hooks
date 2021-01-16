@@ -1,13 +1,13 @@
 ﻿import { useEffect, useState } from 'react';
 import youtube from '../apis/youtube';
 
-const useVideos = () => {
+const useVideos = (defaultSearchTerm) => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        onTermSubmit('cutest puppy');
+        onTermSubmit(defaultSearchTerm);
     }, []);
-
+// 'cutest puppy'
     const onTermSubmit = async (term) => {
         const response = await youtube.get('/search', {
             params: {
